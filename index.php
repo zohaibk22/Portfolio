@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
@@ -15,7 +15,7 @@
             echo '<p>Something went wrong, go back and try again!</p>'; 
          }
     }     
-?>
+?> -->
 
 <!-- <?php $name = $_POST['name'];
 $email = $_POST['email'];
@@ -27,3 +27,24 @@ $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
 echo "Thank You!";
 ?> -->
+
+
+<?php
+
+    if(isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        $from = 'From: TangledDemo'; 
+        $to = 'zkhan14@fordham.edu'; 
+        $subject = 'Hello';
+
+        $headers = "From: ".$from;
+        $txt = "You have received an email from ".$name.".\n\n".$message;
+        
+        
+        mail($to, $subject, $txt, $headers);
+
+    }
+
+    ?>
