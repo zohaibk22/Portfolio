@@ -45,6 +45,8 @@ echo "Thank You!";
         
         mail($to, $subject, $txt, $headers);
 
+        header("Location: index.php?mailsend");
+
     }
 
     ?>
